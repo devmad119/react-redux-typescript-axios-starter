@@ -1,5 +1,3 @@
-import { RGB } from 'common/types'
-
 const theme = {
   color: {
     text: {
@@ -23,7 +21,7 @@ const theme = {
         [3, 1, 140],
         [0, 121, 234],
         [158, 194, 255],
-      ] as RGB[],
+      ],
     },
   },
   ease: {
@@ -31,6 +29,6 @@ const theme = {
     out: 'cubic-bezier(0.22, 0.61, 0.36, 1)',
     inOut: 'cubic-bezier(.46,.03,.52,.96)',
   },
-}
+};
 
-export default theme
+export default theme;
