@@ -1,6 +1,6 @@
-import { createGlobalStyle } from 'styled-components'
-import { font } from 'styles/typography'
-import theme from 'styles/theme'
+import { createGlobalStyle } from 'styled-components';
+import { font } from 'styles/typography';
+import theme from 'styles/theme';
 
 const GlobalStyle = createGlobalStyle`
   html,
@@ -13,14 +13,15 @@ const GlobalStyle = createGlobalStyle`
     font-size: 62.5%;
     font-family: ${font.base};
     text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-smooth: antialiased; /* stylelint-disable-line property-no-unknown */
   }
 
   body {
     font-size: 1.6rem;
-    color: ${theme.color.text.midnight};
+    color: ${theme.color.text.white};
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 0 0;
   }
 
   *,
@@ -30,7 +31,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    color: ${theme.color.text.link};
     text-decoration: none;
   }
 
@@ -54,6 +54,6 @@ const GlobalStyle = createGlobalStyle`
       flex-shrink: 0;
     }
   }
-`
+`;
 
-export default GlobalStyle
+export default GlobalStyle;

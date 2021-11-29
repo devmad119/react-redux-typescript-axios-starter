@@ -9,25 +9,19 @@ const theme = {
       danger: '#e51169',
     },
     background: {
-      dark: '#20295A',
-      light: '#E9EFF4',
+      dark: '#010a0c',
+      night: '#060818',
+      midnight: '#0e1726',
+      light: '#151839bb',
       white: '#FFF',
     },
     border: {
       light: '#E8E6EA',
     },
-    gradient: {
-      scale: [
-        [3, 1, 140],
-        [0, 121, 234],
-        [158, 194, 255],
-      ],
+    button: {
+      primary: '#4361ee',
+      secondary: '#cc33ff',
     },
-  },
-  ease: {
-    in: 'cubic-bezier(.55,.06,.68,.19)',
-    out: 'cubic-bezier(0.22, 0.61, 0.36, 1)',
-    inOut: 'cubic-bezier(.46,.03,.52,.96)',
   },
 };
 
