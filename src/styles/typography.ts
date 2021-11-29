@@ -1,8 +1,8 @@
-import { css } from 'styled-components'
+import { css } from 'styled-components';
 
 export const font = {
-  base: '"Gilroy", sans-serif',
-}
+  base: '"Montserrat", sans-serif',
+};
 
 export const heading = {
   h1: {
@@ -51,7 +51,7 @@ export const heading = {
       font-weight: 400;
     `,
   },
-}
+};
 
 export const paragraph = {
   large: {
@@ -96,4 +96,4 @@ export const paragraph = {
       font-weight: 400;
     `,
   },
-}
+};
