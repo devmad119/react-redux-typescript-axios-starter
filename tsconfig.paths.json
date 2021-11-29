@@ -4,7 +4,14 @@
     "paths": {
       "/*": ["*"],
       "app/*": ["app/*"],
-      "containers/*": ["containers/*"]
+      "assets/*": ["assets/*"],
+      "common*": ["common/*"],
+      "components/*": ["components/*"],
+      "containers/*": ["containers/*"],
+      "context/*": ["context/*"],
+      "hocs/*": ["hocs/*"],
+      "hooks/*": ["hooks/*"],
+      "styles/*": ["styles/*"]
     }
   }
 }
