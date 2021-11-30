@@ -15,6 +15,8 @@ module.exports = function override(config) {
       'hocs/*': path.resolve(__dirname, 'src/hocs/*'),
       'hooks/*': path.resolve(__dirname, 'src/hooks/*'),
       'styles/*': path.resolve(__dirname, 'src/styles/*'),
+      'validation/*': path.resolve(__dirname, 'src/validation/*'),
+      'features/*': path.resolve(__dirname, 'src/features/*'),
     },
   };
 

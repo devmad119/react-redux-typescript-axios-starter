@@ -1,7 +1,9 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-
+import errorReducer from 'features/error-slice';
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    errorReducer,
+  },
 });
 
 export type AppDispatch = typeof store.dispatch;

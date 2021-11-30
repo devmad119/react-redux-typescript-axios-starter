@@ -11,7 +11,9 @@
       "context/*": ["context/*"],
       "hocs/*": ["hocs/*"],
       "hooks/*": ["hooks/*"],
-      "styles/*": ["styles/*"]
+      "styles/*": ["styles/*"],
+      "validation/*": ["validation/*"],
+      "features/*": ["features/*"]
     }
   }
 }
