@@ -5,6 +5,7 @@ import App from 'containers/app';
 import { store } from 'app/store';
 import { Provider } from 'react-redux';
 import * as serviceWorker from 'serviceWorker';
+import 'react-toastify/dist/ReactToastify.css';
 
 ReactDOM.render(
   <React.StrictMode>

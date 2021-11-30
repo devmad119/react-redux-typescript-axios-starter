@@ -6,10 +6,12 @@ import logoImg from 'assets/icons/logo.png';
 const Header: React.FC = () => {
   return (
     <StyledHeader>
-      <Logo>
-        <img src={logoImg} width={40} height={40} alt="logo" />
-        <LogoTitle>Supremacy SMS</LogoTitle>
-      </Logo>
+      <Link to="/">
+        <Logo>
+          <img src={logoImg} width={40} height={40} alt="logo" />
+          <LogoTitle>Supremacy</LogoTitle>
+        </Logo>
+      </Link>
       <Links>
         <Link to="/signin">Sign In</Link>
         <Link to="/signup">Sign Up</Link>

@@ -31,4 +31,7 @@ export const StyledButton = styled.button<Props>`
   :hover {
     margin: 7px 0 13px 0;
   }
+  :active {
+    transform: scale(0.95);
+  }
 `;

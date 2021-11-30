@@ -13,6 +13,8 @@ const Signin: React.FC = () => {
     setEmail(e.target.value);
   };
 
+  const handleClick = () => {};
+
   return (
     <Card>
       <img src={logoImg} width={100} height={100} alt="logo" />
@@ -23,7 +25,9 @@ const Signin: React.FC = () => {
       <StyledLink to="/forgot-password">
         <LinkText>Forgot Password?</LinkText>
       </StyledLink>
-      <Button variant="primary">Sign In</Button>
+      <Button variant="primary" onClick={handleClick}>
+        Sign In
+      </Button>
       <Link to="/signup">
         <LinkText>Don't have an account?</LinkText>
       </Link>
