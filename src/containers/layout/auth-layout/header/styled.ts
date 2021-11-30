@@ -20,11 +20,13 @@ export const Logo = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  cursor: pointer;
 `;
 
 export const LogoTitle = styled.h4`
   ${heading.h4.bold};
   margin-left: 10px;
+  color: white;
 `;
 
 export const Links = styled.div`
