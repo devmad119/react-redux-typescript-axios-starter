@@ -1,6 +1,6 @@
 import Cookies from 'js-cookie';
 import jwtDecode from 'jwt-decode';
-import { TokenResponse } from '/common/types/auth-types';
+import { TokenResponse } from 'common/types/auth-types';
 
 const ACCESS_TOKEN = 'access_token';
 const USER_HANDLE = 'user_handle';
@@ -31,7 +31,6 @@ const getUserHandle = () => Cookies.get(USER_HANDLE);
 const isAuthenticated = () => {
   const token = getToken();
   const userHandle = getUserHandle();
-
   if (!token || !userHandle) {
     return false;
   }

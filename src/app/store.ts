@@ -1,10 +1,29 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import errorReducer from 'features/error-slice';
-export const store = configureStore({
-  reducer: {
-    errorReducer,
-  },
+import storage from 'redux-persist/lib/storage';
+import { combineReducers } from 'redux';
+import { persistReducer } from 'redux-persist';
+import thunk from 'redux-thunk';
+import authReducer from 'features/auth-slice';
+
+const reducers = combineReducers({
+  auth: authReducer,
 });
+
+const persistConfig = {
+  key: 'root',
+  storage,
+  whitelist: ['auth'],
+};
+
+const persistedReducer = persistReducer(persistConfig, reducers);
+
+const store = configureStore({
+  reducer: persistedReducer,
+  devTools: process.env.NODE_ENV !== 'production',
+  middleware: [thunk],
+});
+
+export default store;
 
 export type AppDispatch = typeof store.dispatch;
 export type RootState = ReturnType<typeof store.getState>;

@@ -1,10 +1,10 @@
-// layouts
-import AuthLayout from 'containers/layout/auth-layout';
+import { lazy } from 'react';
 
-// components
-import Signin from 'containers/signin';
-import SignUp from 'containers/signup';
-
+//lazy loading for all layouts and components
+const AuthLayout = lazy(() => import('containers/layout/auth-layout'));
+const SignIn = lazy(() => import('containers/signin'));
+const SignUp = lazy(() => import('containers/signup'));
+const Dashboard = lazy(() => import('containers/dashboard'));
 // routes
 export type RouteType = {
   path: string;
@@ -14,8 +14,9 @@ export type RouteType = {
 };
 
 const routes: RouteType[] = [
-  { path: '/signin', exact: true, layout: AuthLayout, component: Signin },
+  { path: '/signin', exact: true, layout: AuthLayout, component: SignIn },
   { path: '/signup', exact: true, layout: AuthLayout, component: SignUp },
+  { path: '/dashboard', exact: true, layout: AuthLayout, component: Dashboard },
 ];
 
 export default routes;
