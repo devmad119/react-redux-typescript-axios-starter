@@ -2,7 +2,7 @@ import React from 'react';
 import { StyledCard } from './styled';
 
 interface Props {
-  children: React.ReactChild[];
+  children: any;
 }
 
 const Card: React.FC<Props> = props => {

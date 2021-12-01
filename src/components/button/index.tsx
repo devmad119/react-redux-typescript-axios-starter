@@ -3,7 +3,7 @@ import { StyledButton } from './styled';
 import { PuffLoader } from 'react-spinners';
 
 interface Props {
-  children: React.ReactChild;
+  children: any;
   variant?: 'primary' | 'secondary';
   onClick: Function;
   loading: boolean;
