@@ -13,3 +13,9 @@ export type TokenResponse = {
   api_token: string;
   handle: string;
 };
+
+export type CurrentUser = {
+  _id: string;
+  email: string;
+  userName: string;
+};

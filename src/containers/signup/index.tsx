@@ -8,6 +8,8 @@ import { Title, LinkText } from './styled';
 import logoImg from 'assets/icons/logo.png';
 import isEmpty from 'validation/is-empty';
 import isEmail from 'validation/is-email';
+import { authApiService } from 'common/services/auth-api-service';
+import { CreateUser } from 'common/types/auth-types';
 
 interface State {
   userName: string;
@@ -24,13 +26,14 @@ const initialState: State = {
 };
 
 const SignUp: React.FC = () => {
+  const [loading, setLoading] = useState<boolean>(false);
   const [state, setState] = useState<State>(initialState);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setState({ ...state, [event.target.name]: event.target.value });
   };
 
-  const handleClick = () => {
+  const handleClick = async () => {
     if (isEmpty(state.userName)) {
       toast.warning('Please fill the username.');
       return;
@@ -47,9 +50,29 @@ const SignUp: React.FC = () => {
       toast.warning('Please fill the password.');
       return;
     }
-    if (state.password !== state.confirmPassword) {
-      toast.warning('Please enter the correct passwod.');
+    if (state.password.length < 6) {
+      toast.warning('Password must be longer than 6 characters.');
       return;
+    }
+    if (state.password !== state.confirmPassword) {
+      toast.warning('Please enter the correct password.');
+      return;
+    }
+
+    const userData: CreateUser = {
+      email: state.email,
+      password: state.password,
+      userName: state.userName,
+    };
+
+    try {
+      setLoading(true);
+      const res = await authApiService.signUp(userData);
+      setLoading(false);
+      if (res.data) toast.success(res.data.message);
+    } catch (error) {
+      setLoading(false);
+      toast.error(error as string);
     }
   };
 
@@ -62,7 +85,7 @@ const SignUp: React.FC = () => {
         <Input name="email" type="email" placeholder="Enter the Email" value={state.email} onChange={handleChange} />
         <Input name="password" type="password" placeholder="Enter the Password" value={state.password} onChange={handleChange} />
         <Input name="confirmPassword" type="password" placeholder="Confirm the Password" value={state.confirmPassword} onChange={handleChange} />
-        <Button variant="primary" onClick={handleClick}>
+        <Button variant="primary" onClick={handleClick} loading={loading}>
           Sign Up
         </Button>
         <Link to="/signin">
