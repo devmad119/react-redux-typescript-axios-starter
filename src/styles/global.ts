@@ -9,6 +9,10 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
   }
 
+  .Toastify__toast {
+    width: 350px;
+  }
+
   html {
     font-size: 62.5%;
     font-family: ${font.base};

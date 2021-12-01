@@ -132,15 +132,18 @@ class HttpApiService {
   }
 
   handleError = (err: any) => {
+    let errorStatement: string = '';
     if (!err.response) {
       console.log(`Network error: ${err}`);
+      errorStatement = err.message;
     } else {
       if (err.response !== undefined) {
         const { status } = err.response;
-        console.log(`HttpService::Error(${status}) : ${err.response.data.Message}`);
+        console.log(`HttpService::Error(${status}) : ${err.response.data.message}`);
+        errorStatement = `Error(${status}) : ${err.response.data.message}`;
       }
     }
-    return Promise.reject(err);
+    return Promise.reject(errorStatement);
   };
 
   redirectTo = (document: any, path: string) => {
