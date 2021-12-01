@@ -4,7 +4,7 @@ import Footer from './footer';
 import { AuthSection } from './styled';
 
 interface Props {
-  children: React.ReactChild;
+  children: any;
 }
 
 const AuthLayout: React.FC<Props> = props => {
