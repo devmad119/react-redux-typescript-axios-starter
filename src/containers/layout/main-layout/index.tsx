@@ -1,4 +1,5 @@
 import React from 'react';
+import PerfectScrollbar from 'react-perfect-scrollbar';
 import Header from './header';
 import Footer from './footer';
 import Sidebar from './sidebar';
@@ -18,8 +19,10 @@ const MainLayout: React.FC<Props> = props => {
       <MainSection>
         <Header />
         <ContentSection>
-          <Content>{children}</Content>
-          <Footer />
+          <PerfectScrollbar draggable>
+            <Content>{children}</Content>
+            <Footer />
+          </PerfectScrollbar>
         </ContentSection>
       </MainSection>
     </StyledMainLayout>
