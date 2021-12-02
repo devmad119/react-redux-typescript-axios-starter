@@ -9,6 +9,7 @@ import { Provider } from 'react-redux';
 import * as serviceWorker from 'serviceWorker';
 import 'react-toastify/dist/ReactToastify.css';
 import 'react-pro-sidebar/dist/css/styles.css';
+import 'react-perfect-scrollbar/dist/css/styles.css';
 
 const persistor = persistStore(store);
 
