@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { heading } from 'styles/typography';
 import theme from 'styles/theme';
 
 export const StyledHeader = styled.header`

@@ -37,7 +37,7 @@ const isAuthenticated = () => {
   return isTokenValid(token);
 };
 
-export default {
+const authApi = {
   login,
   logout,
   getToken,
@@ -45,3 +45,5 @@ export default {
   isAuthenticated,
   isTokenValid,
 };
+
+export default authApi;

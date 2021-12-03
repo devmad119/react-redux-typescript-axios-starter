@@ -1,5 +1,5 @@
 import axios, { AxiosInstance, AxiosPromise, AxiosResponse } from 'axios';
-import auth from 'common/api/auth';
+import authApi from 'common/api/auth';
 import isEmpty from 'validation/is-empty';
 
 class HttpApiService {
@@ -13,14 +13,14 @@ class HttpApiService {
 
   private defaultOptions = (): any => {
     let headers: any = {};
-    if (isEmpty(auth.getToken())) {
+    if (isEmpty(authApi.getToken())) {
       headers = {
         Accept: 'application/json',
       };
     } else {
       headers = {
         Accept: 'application/json',
-        Authorization: auth.getToken(),
+        Authorization: 'Supremacy ' + authApi.getToken(),
       };
     }
     const options = {
@@ -140,7 +140,7 @@ class HttpApiService {
       if (err.response !== undefined) {
         const { status } = err.response;
         console.log(`HttpService::Error(${status}) : ${err.response.data.message}`);
-        errorStatement = `Error(${status}) : ${err.response.data.message}`;
+        errorStatement = err.response.data.message;
       }
     }
     return Promise.reject(errorStatement);
