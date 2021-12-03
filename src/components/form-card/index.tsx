@@ -5,9 +5,9 @@ interface Props {
   children: any;
 }
 
-const Card: React.FC<Props> = props => {
+const FormCard: React.FC<Props> = props => {
   const { children } = props;
   return <StyledCard>{children}</StyledCard>;
 };
 
-export default Card;
+export default FormCard;

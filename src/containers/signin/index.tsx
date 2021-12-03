@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import Card from 'components/card';
-import Input from 'components/input';
-import Button from 'components/button';
+import FormCard from 'components/form-card';
+import FormInput from 'components/form-input';
+import FormButton from 'components/form-button';
 import { Title, SubTitle, LinkText, StyledLink } from './styled';
 import logoImg from 'assets/icons/logo.png';
 import isEmpty from 'validation/is-empty';
-import { authApiService } from 'common/services/auth-api-service';
+import AuthApiService from 'common/services/auth-api-service';
 import { CheckAccount } from 'common/types/auth-types';
 import { TokenResponse } from 'common/types/auth-types';
 import { setCurrentUser } from 'features/auth-slice';
@@ -26,6 +26,8 @@ const initialState: State = {
 };
 
 const SignIn: React.FC = () => {
+  const authApiService = new AuthApiService();
+
   const [loading, setLoading] = useState<boolean>(false);
   const [state, setState] = useState<State>(initialState);
   const dispatch = useAppDispatch();
@@ -72,6 +74,8 @@ const SignIn: React.FC = () => {
         await authApi.login(tokenResponse);
         history.push('/');
         toast.success(res.data.message);
+      } else {
+        toast.error('Something went wrong.');
       }
     } catch (error) {
       setLoading(false);
@@ -80,22 +84,22 @@ const SignIn: React.FC = () => {
   };
 
   return (
-    <Card>
+    <FormCard>
       <img src={logoImg} width={100} height={100} alt="logo" />
       <Title>WELCOME</Title>
       <SubTitle>Sign in by entering the information below</SubTitle>
-      <Input name="account" type="text" placeholder="Enter the Email or UserName" value={state.account} onChange={handleChange} />
-      <Input name="password" type="password" placeholder="Enter the Password" value={state.password} onChange={handleChange} />
+      <FormInput name="account" type="text" placeholder="Enter the Email or UserName" value={state.account} onChange={handleChange} />
+      <FormInput name="password" type="password" placeholder="Enter the Password" value={state.password} onChange={handleChange} />
       <StyledLink to="/forgot-password">
         <LinkText>Forgot Password?</LinkText>
       </StyledLink>
-      <Button variant="primary" onClick={handleClick} loading={loading}>
+      <FormButton variant="primary" onClick={handleClick} loading={loading}>
         Sign In
-      </Button>
+      </FormButton>
       <Link to="/signup">
         <LinkText>Don't have an account?</LinkText>
       </Link>
-    </Card>
+    </FormCard>
   );
 };
 

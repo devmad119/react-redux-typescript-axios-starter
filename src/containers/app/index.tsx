@@ -1,6 +1,5 @@
 import React, { Suspense, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
-import jwt_decode from 'jwt-decode';
 import GlobalStyles from 'styles/global';
 import routes, { RouteType } from 'app/routes';
 import Toastr from 'components/toastr';
@@ -10,6 +9,7 @@ import useAppSelector from 'hooks/use-app-seletecor';
 import authApi from 'common/api/auth';
 import { setCurrentUser } from 'features/auth-slice';
 import useAppDispatch from 'hooks/use-app-dispatch';
+import isEmpty from 'validation/is-empty';
 
 const App: React.FC = () => {
   const isAuthenticated = useAppSelector(selectIsAuthenticated);
@@ -21,12 +21,9 @@ const App: React.FC = () => {
   };
 
   useEffect(() => {
-    if (authApi.getToken()) {
-      const decoded: any = jwt_decode(authApi.getToken() as string);
-      const currentTime = Date.now() / 1000;
-      if (decoded.exp < currentTime) {
-        signOut();
-      }
+    const token: string = authApi.getToken() as string;
+    if (!isEmpty(token)) {
+      if (!authApi.isTokenValid(token)) signOut();
     } else signOut();
   }, []);
 
@@ -37,7 +34,7 @@ const App: React.FC = () => {
         <Router>
           <Switch>
             <Route exact path="/">
-              {isAuthenticated ? <Redirect to="/dashboard" /> : <Redirect to="/signin" />}
+              {isAuthenticated ? <Redirect to="/quick-sms" /> : <Redirect to="/signin" />}
             </Route>
             {routes.map((route: RouteType, index: number) => {
               return (

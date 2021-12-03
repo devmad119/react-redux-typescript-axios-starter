@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import Card from 'components/card';
-import Input from 'components/input';
-import Button from 'components/button';
+import FormCard from 'components/form-card';
+import FormInput from 'components/form-input';
+import FormButton from 'components/form-button';
 import { Title, LinkText } from './styled';
 import logoImg from 'assets/icons/logo.png';
 import isEmpty from 'validation/is-empty';
 import isEmail from 'validation/is-email';
-import { authApiService } from 'common/services/auth-api-service';
+import AuthApiService from 'common/services/auth-api-service';
 import { CreateUser } from 'common/types/auth-types';
 
 interface State {
@@ -26,6 +26,8 @@ const initialState: State = {
 };
 
 const SignUp: React.FC = () => {
+  const authApiService = new AuthApiService();
+
   const [loading, setLoading] = useState<boolean>(false);
   const [state, setState] = useState<State>(initialState);
 
@@ -78,20 +80,20 @@ const SignUp: React.FC = () => {
 
   return (
     <>
-      <Card>
+      <FormCard>
         <img src={logoImg} width={100} height={100} alt="logo" />
         <Title>Please Sign Up in here!</Title>
-        <Input name="userName" type="text" placeholder="Enter the UserName" value={state.userName} onChange={handleChange} />
-        <Input name="email" type="email" placeholder="Enter the Email" value={state.email} onChange={handleChange} />
-        <Input name="password" type="password" placeholder="Enter the Password" value={state.password} onChange={handleChange} />
-        <Input name="confirmPassword" type="password" placeholder="Confirm the Password" value={state.confirmPassword} onChange={handleChange} />
-        <Button variant="primary" onClick={handleClick} loading={loading}>
+        <FormInput name="userName" type="text" placeholder="Enter the UserName" value={state.userName} onChange={handleChange} />
+        <FormInput name="email" type="email" placeholder="Enter the Email" value={state.email} onChange={handleChange} />
+        <FormInput name="password" type="password" placeholder="Enter the Password" value={state.password} onChange={handleChange} />
+        <FormInput name="confirmPassword" type="password" placeholder="Confirm the Password" value={state.confirmPassword} onChange={handleChange} />
+        <FormButton variant="primary" onClick={handleClick} loading={loading}>
           Sign Up
-        </Button>
+        </FormButton>
         <Link to="/signin">
           <LinkText>Already have an account?</LinkText>
         </Link>
-      </Card>
+      </FormCard>
     </>
   );
 };

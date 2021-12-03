@@ -13,6 +13,9 @@ const theme = {
       night: '#060818',
       midnight: '#0e1726',
       light: '#151839bb',
+      main: '#222b52',
+      panel: '#151939ff',
+      highlight: '#353F68',
       white: '#FFF',
     },
     border: {

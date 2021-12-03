@@ -12,5 +12,5 @@ export const ContentSection = styled.div`
 
 export const StyledMainLayout = styled.div`
   display: flex;
-  background-color: ${theme.color.background.night};
+  background-color: ${theme.color.background.main};
 `;
