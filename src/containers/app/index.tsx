@@ -11,6 +11,8 @@ import { setCurrentUser } from 'features/auth-slice';
 import useAppDispatch from 'hooks/use-app-dispatch';
 import isEmpty from 'validation/is-empty';
 
+const Error404 = React.lazy(() => import('containers/404'));
+
 const App: React.FC = () => {
   const isAuthenticated = useAppSelector(selectIsAuthenticated);
   const dispatch = useAppDispatch();
@@ -45,6 +47,7 @@ const App: React.FC = () => {
                 </Route>
               );
             })}
+            <Route path="*" component={Error404} />
           </Switch>
         </Router>
         <Toastr />
