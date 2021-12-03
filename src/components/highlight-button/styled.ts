@@ -12,7 +12,7 @@ export const StyledButton = styled.button`
   border: none;
   cursor: pointer;
   :hover {
-    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.19);
+    background: linear-gradient(65.4deg, #6ac7fc 15.74%, #4e89fe 78.33%);
   }
   :active {
     transform: scale(0.95);
