@@ -4,15 +4,17 @@ import { combineReducers } from 'redux';
 import { persistReducer } from 'redux-persist';
 import thunk from 'redux-thunk';
 import authReducer from 'features/auth-slice';
+import menuReducer from 'features/menu-slice';
 
 const reducers = combineReducers({
   auth: authReducer,
+  menu: menuReducer,
 });
 
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['auth'],
+  whitelist: ['auth', 'menu'],
 };
 
 const persistedReducer = persistReducer(persistConfig, reducers);

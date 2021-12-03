@@ -49,6 +49,5 @@ export const LogoTitle = styled.h4`
   color: #fff;
   font-weight: 700;
   text-transform: uppercase;
-  animation: blur 1.2s ease-out infinite;
   text-shadow: 0px 0px 5px #fff, 0px 0px 10px #fff;
 `;

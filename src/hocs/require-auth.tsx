@@ -12,7 +12,7 @@ const requireAuth =
 
     if (!isAuthenticated) {
       authApi.logout();
-      history.push('/');
+      history.push('/signin');
       return null;
     }
 

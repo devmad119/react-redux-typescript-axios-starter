@@ -9,9 +9,9 @@ interface Props {
   onChange: Function;
 }
 
-const Input: React.FC<Props> = props => {
+const FormInput: React.FC<Props> = props => {
   const { name, type, value, placeholder, onChange } = props;
   return <StyledInput name={name} type={type || 'text'} value={value} placeholder={placeholder} onChange={e => onChange(e)} />;
 };
 
-export default Input;
+export default FormInput;
