@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import { ProSidebar, Menu, SubMenu, MenuItem, SidebarHeader, SidebarFooter, SidebarContent } from 'react-pro-sidebar';
@@ -51,6 +51,35 @@ const Sidebar: React.FC = () => {
       toast.error(error as string);
     }
   };
+
+  useEffect(() => {
+    switch (selectedIndex) {
+      case 0:
+        history.push('/quick-sms');
+        break;
+      case 1:
+        history.push('/sendout-status');
+        break;
+      case 2:
+        history.push('/sendout-history');
+        break;
+      case 3:
+        history.push('/statistics');
+        break;
+      case 4:
+        history.push('/add-funds');
+        break;
+      case 5:
+        history.push('/deposit-history');
+        break;
+      case 6:
+        history.push('/settings');
+        break;
+      default:
+        history.push('/quick-sms');
+        break;
+    }
+  }, [selectedIndex]);
 
   return (
     <>

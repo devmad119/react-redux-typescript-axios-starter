@@ -1,6 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from 'app/store';
-import isEmpty from 'validation/is-empty';
 
 interface MenuState {
   selectedIndex: number;
