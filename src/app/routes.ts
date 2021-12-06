@@ -7,6 +7,7 @@ const SignIn = lazy(() => import('containers/signin'));
 const SignUp = lazy(() => import('containers/signup'));
 const QuickSMS = lazy(() => import('containers/quick-sms'));
 const AddFunds = lazy(() => import('containers/add-funds'));
+const SendoutHistory = lazy(() => import('containers/sendout-history'));
 // routes
 export type RouteType = {
   path: string;
@@ -20,6 +21,7 @@ const routes: RouteType[] = [
   { path: '/signup', exact: true, layout: AuthLayout, component: SignUp },
   { path: '/quick-sms', exact: true, layout: MainLayout, component: QuickSMS },
   { path: '/add-funds', exact: true, layout: MainLayout, component: AddFunds },
+  { path: '/sendout-history', exact: true, layout: MainLayout, component: SendoutHistory },
 ];
 
 export default routes;

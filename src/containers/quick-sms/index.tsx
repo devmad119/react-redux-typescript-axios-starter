@@ -24,7 +24,7 @@ const buttonLabels = ['Test', 'Send'];
 const QuickSMS: React.FC = () => {
   const [sendState, SetSendState] = useState<number>(0);
 
-  const handleClick = () => {
+  const handleSubmit = () => {
     SetSendState(sendState + 1);
   };
 
@@ -73,7 +73,7 @@ const QuickSMS: React.FC = () => {
               <option>Sprint</option>
               <option>Metro pcs</option>
             </StyledSelect>
-            <HighlightButton loading={false} onClick={handleClick}>
+            <HighlightButton loading={false} onClick={handleSubmit}>
               <FiSend />
               <label>{buttonLabels[sendState % 2]}</label>
             </HighlightButton>
