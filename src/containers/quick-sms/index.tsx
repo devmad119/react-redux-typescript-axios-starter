@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import requireAuth from 'hocs/require-auth';
+import { FiSend } from 'react-icons/fi';
 import {
   StyledQuickSMS,
   MessageStatistics,
@@ -17,7 +17,6 @@ import {
   OptionalSection,
   StyledSelect,
 } from './styled';
-import { FiSend } from 'react-icons/fi';
 import HighlightButton from 'components/highlight-button';
 
 const buttonLabels = ['Test', 'Send'];
@@ -85,4 +84,4 @@ const QuickSMS: React.FC = () => {
   );
 };
 
-export default requireAuth(QuickSMS);
+export default QuickSMS;

@@ -57,20 +57,6 @@ const AddFunds: React.FC = () => {
         </HighlightCard>
       </CardSection>
       <CardSection>
-        <HighlightCard colors={['rgb(22,81,95)', 'rgb(108,173,126)']}>
-          <TopSection>
-            <FaHandHoldingUsd />
-            <span>USD Tron/TRC-20</span>
-          </TopSection>
-          <CenterSection>
-            <FaHandHoldingUsd />
-            <span>Any amount is acceptable</span>
-          </CenterSection>
-          <BottomSection>
-            <AiOutlinePlus />
-            <span>Add Balance Using USD Tron/TRC-20</span>
-          </BottomSection>
-        </HighlightCard>
         <HighlightCard colors={['rgb(90,135,229)', 'rgb(76,166,225)']}>
           <TopSection>
             <FaBitcoin />
@@ -85,23 +71,7 @@ const AddFunds: React.FC = () => {
             <span>Add Balance Using Bitcoin Cash Currency</span>
           </BottomSection>
         </HighlightCard>
-        <HighlightCard colors={['rgb(149,1,32)', 'rgb(69,9,20)']}>
-          <TopSection>
-            <GiMoneyStack />
-            <span>Perfect Money</span>
-          </TopSection>
-          <CenterSection>
-            <GiMoneyStack />
-            <span>Min/Max is 20 USD/5000 USD</span>
-          </CenterSection>
-          <BottomSection>
-            <AiOutlinePlus />
-            <span>Add Balance Using Perfect Money</span>
-          </BottomSection>
-        </HighlightCard>
-      </CardSection>
-      <CardSection>
-        <HighlightCard colors={['rgb(172, 0, 230)', 'rgb(210, 77, 255)']}>
+        <HighlightCard colors={['rgb(204, 82, 0)', 'rgb(255, 148, 77)']}>
           <TopSection>
             <img src={XMRIcon} alt="xmr" />
             <span>XMR</span>
@@ -129,7 +99,9 @@ const AddFunds: React.FC = () => {
             <span>Add Balance Using XRP Currency</span>
           </BottomSection>
         </HighlightCard>
-        <HighlightCard colors={['rgb(102, 102, 102)', 'rgb(140, 140, 140)']}>
+      </CardSection>
+      <CardSection>
+        <HighlightCard colors={['rgb(179, 0, 134)', 'rgb(210, 77, 255)']}>
           <TopSection>
             <img src={TetherIcon} alt="xmr" width={30} height={30} />
             <span>Tether</span>
@@ -141,6 +113,34 @@ const AddFunds: React.FC = () => {
           <BottomSection>
             <AiOutlinePlus />
             <span>Add Balance Using Tether Currency</span>
+          </BottomSection>
+        </HighlightCard>
+        <HighlightCard colors={['rgb(22,81,95)', 'rgb(108,173,126)']}>
+          <TopSection>
+            <FaHandHoldingUsd />
+            <span>USD Tron/TRC-20</span>
+          </TopSection>
+          <CenterSection>
+            <FaHandHoldingUsd />
+            <span>Any amount is acceptable</span>
+          </CenterSection>
+          <BottomSection>
+            <AiOutlinePlus />
+            <span>Add Balance Using USD Tron/TRC-20</span>
+          </BottomSection>
+        </HighlightCard>
+        <HighlightCard colors={['rgb(149,1,32)', 'rgb(69,9,20)']}>
+          <TopSection>
+            <GiMoneyStack />
+            <span>Perfect Money</span>
+          </TopSection>
+          <CenterSection>
+            <GiMoneyStack />
+            <span>Min/Max is 20 USD/5000 USD</span>
+          </CenterSection>
+          <BottomSection>
+            <AiOutlinePlus />
+            <span>Add Balance Using Perfect Money</span>
           </BottomSection>
         </HighlightCard>
       </CardSection>

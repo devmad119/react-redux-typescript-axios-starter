@@ -5,6 +5,7 @@ import Footer from './footer';
 import Sidebar from './sidebar';
 import Content from './content';
 import { MainSection, StyledMainLayout, ContentSection } from './styled';
+import requireAuth from 'hocs/require-auth';
 
 interface Props {
   children: any;
@@ -29,4 +30,4 @@ const MainLayout: React.FC<Props> = props => {
   );
 };
 
-export default MainLayout;
+export default requireAuth(MainLayout);
