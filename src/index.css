@@ -1,3 +1,5 @@
+@import '~antd/dist/antd.css';
+
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
@@ -119,4 +121,36 @@ body {
 
 .popper-inner {
   background-color: #0e1025 !important;
+}
+
+.ant-table-thead > tr > th {
+  color: white;
+  background: #353f68;
+  border-color: #0e1025;
+}
+.anticon svg {
+  color: white;
+}
+.ant-table-tbody > tr > td {
+  color: white;
+  background: #151939ff !important;
+  border-color: #0e1025;
+}
+.ant-table {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+}
+
+.ant-table-tbody > tr:last-child td:first-child {
+  border-bottom-left-radius: 5px;
+}
+.ant-table-tbody > tr:last-child td:last-child {
+  border-bottom-right-radius: 5px;
+}
+
+.ant-table-thead > tr:last-child td:first-child {
+  border-bottom-left-radius: 5px;
+}
+.ant-table-thead > tr:last-child td:last-child {
+  border-bottom-right-radius: 5px;
 }
