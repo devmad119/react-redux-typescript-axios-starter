@@ -38,7 +38,7 @@ const Sidebar: React.FC = () => {
   };
   const selectedIndex = useAppSelector(selectIndex);
 
-  const handleClick = async () => {
+  const handleSignOut = async () => {
     try {
       const res = await authApiService.signOut();
       if (res.data) {
@@ -140,7 +140,7 @@ const Sidebar: React.FC = () => {
           </SidebarContent>
           <SidebarFooter>
             <Menu iconShape="square">
-              <MenuItem icon={<FiLogOut />} onClick={handleClick}>
+              <MenuItem icon={<FiLogOut />} onClick={handleSignOut}>
                 Sign Out
               </MenuItem>
             </Menu>

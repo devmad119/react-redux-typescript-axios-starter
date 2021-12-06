@@ -35,7 +35,7 @@ const SignUp: React.FC = () => {
     setState({ ...state, [event.target.name]: event.target.value });
   };
 
-  const handleClick = async () => {
+  const handleSubmit = async () => {
     if (isEmpty(state.userName)) {
       toast.warning('Please fill the username.');
       return;
@@ -78,16 +78,22 @@ const SignUp: React.FC = () => {
     }
   };
 
+  const handleKeyDown = (event: any) => {
+    if (event.key === 'Enter') {
+      handleSubmit();
+    }
+  };
+
   return (
     <>
-      <FormCard>
+      <FormCard onKeyDown={handleKeyDown}>
         <img src={logoImg} width={100} height={100} alt="logo" />
         <Title>Please Sign Up in here!</Title>
         <FormInput name="userName" type="text" placeholder="Enter the UserName" value={state.userName} onChange={handleChange} />
         <FormInput name="email" type="email" placeholder="Enter the Email" value={state.email} onChange={handleChange} />
         <FormInput name="password" type="password" placeholder="Enter the Password" value={state.password} onChange={handleChange} />
         <FormInput name="confirmPassword" type="password" placeholder="Confirm the Password" value={state.confirmPassword} onChange={handleChange} />
-        <FormButton variant="primary" onClick={handleClick} loading={loading}>
+        <FormButton variant="primary" onClick={handleSubmit} loading={loading}>
           Sign Up
         </FormButton>
         <Link to="/signin">

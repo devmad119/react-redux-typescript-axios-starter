@@ -5,7 +5,7 @@ const Toastr: React.FC = () => {
   return (
     <ToastContainer
       position="bottom-left"
-      autoClose={2500}
+      autoClose={2000}
       hideProgressBar={false}
       newestOnTop={false}
       closeOnClick
