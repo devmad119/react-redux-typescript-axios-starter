@@ -31,6 +31,11 @@ export const HighlightCard = styled.div<Props>`
   }};
   width: 23vw;
   padding: 15px 15px 15px 20px;
+  transition: all 0.2s;
+  :hover {
+    transform: scale(1.05);
+  }
+  cursor: pointer;
 `;
 
 export const TopSection = styled.div`
@@ -81,4 +86,9 @@ export const BottomSection = styled.button`
   color: white;
   padding: 5px 5px;
   box-shadow: 0px 0px 2px black, 0px 0px 2px black;
+
+  transition: all 0.3s;
+  :active {
+    transform: scale(0.95);
+  }
 `;
