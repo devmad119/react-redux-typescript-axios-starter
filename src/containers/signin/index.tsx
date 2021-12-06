@@ -37,7 +37,7 @@ const SignIn: React.FC = () => {
     setState({ ...state, [event.target.name]: event.target.value });
   };
 
-  const handleClick = async () => {
+  const handleSubmit = async () => {
     if (isEmpty(state.account)) {
       toast.warning('Please enter the email or username.');
       return;
@@ -83,8 +83,14 @@ const SignIn: React.FC = () => {
     }
   };
 
+  const handleKeyDown = (event: any) => {
+    if (event.key === 'Enter') {
+      handleSubmit();
+    }
+  };
+
   return (
-    <FormCard>
+    <FormCard onKeyDown={handleKeyDown}>
       <img src={logoImg} width={100} height={100} alt="logo" />
       <Title>WELCOME</Title>
       <SubTitle>Sign in by entering the information below</SubTitle>
@@ -93,7 +99,7 @@ const SignIn: React.FC = () => {
       <StyledLink to="/forgot-password">
         <LinkText>Forgot Password?</LinkText>
       </StyledLink>
-      <FormButton variant="primary" onClick={handleClick} loading={loading}>
+      <FormButton variant="primary" onClick={handleSubmit} loading={loading}>
         Sign In
       </FormButton>
       <Link to="/signup">
