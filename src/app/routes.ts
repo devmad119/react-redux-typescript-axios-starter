@@ -8,6 +8,7 @@ const SignUp = lazy(() => import('containers/signup'));
 const QuickSMS = lazy(() => import('containers/quick-sms'));
 const AddFunds = lazy(() => import('containers/add-funds'));
 const SendoutHistory = lazy(() => import('containers/sendout-history'));
+
 // routes
 export type RouteType = {
   path: string;

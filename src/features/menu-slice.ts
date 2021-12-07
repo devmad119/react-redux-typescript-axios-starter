@@ -14,7 +14,7 @@ export const menuSlice = createSlice({
   initialState,
   // The `reducers` field lets us define reducers and generate associated actions
   reducers: {
-    setSelectedIndex: (state, action: PayloadAction<number>) => {
+    setSelectedIndex: (state: MenuState, action: PayloadAction<number>) => {
       state.selectedIndex = action.payload;
     },
   },
