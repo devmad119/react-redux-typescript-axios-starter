@@ -31,26 +31,26 @@ const App: React.FC = () => {
 
   return (
     <>
-      <Suspense fallback={<Loading />}>
-        <GlobalStyles />
+      <Suspense fallback={<Loading/>}>
+        <GlobalStyles/>
         <Router>
           <Switch>
             <Route exact path="/">
-              {isAuthenticated ? <Redirect to="/quick-sms" /> : <Redirect to="/signin" />}
+              {isAuthenticated ? <Redirect to="/quick-sms"/> : <Redirect to="/signin"/>}
             </Route>
             {routes.map((route: RouteType, index: number) => {
               return (
                 <Route path={route.path} exact={route.exact} key={index}>
                   <route.layout>
-                    <route.component />
+                    <route.component/>
                   </route.layout>
                 </Route>
               );
             })}
-            <Route path="*" component={Error404} />
+            <Route path="*" component={Error404}/>
           </Switch>
         </Router>
-        <Toastr />
+        <Toastr/>
       </Suspense>
     </>
   );

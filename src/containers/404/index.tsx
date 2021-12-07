@@ -10,7 +10,7 @@ const Error404: React.FC = () => {
   return (
     <>
       <div className="background">
-        <div className="ground"></div>
+        <div className="ground"/>
       </div>
       <div className="container">
         <div className="left-section">
@@ -18,8 +18,8 @@ const Error404: React.FC = () => {
             <h1 className="heading">404</h1>
             <p className="subheading">
               Looks like the page you were looking for is no longer here.
-              <br />
-              <br />
+              <br/>
+              <br/>
               <Link className="home" to="/" onClick={() => dispatch(setSelectedIndex(0))}>
                 Please go to home!
               </Link>
@@ -48,7 +48,8 @@ const Error404: React.FC = () => {
                 d="M417.361,459.027c0,0.769-1.244,1.39-2.778,1.39H170.139c-1.533,0-2.777-0.621-2.777-1.39v-4.86
           c0-0.769,1.244-0.694,2.777-0.694h244.444c1.534,0,2.778-0.074,2.778,0.694V459.027z"
               />
-              <path d="M185.417,443.75H400c0,0,18.143,9.721,17.361,10.417l-250-0.696C167.303,451.65,185.417,443.75,185.417,443.75z" />
+              <path
+                d="M185.417,443.75H400c0,0,18.143,9.721,17.361,10.417l-250-0.696C167.303,451.65,185.417,443.75,185.417,443.75z"/>
             </g>
             <g id="lamp">
               <path
@@ -62,20 +63,22 @@ const Error404: React.FC = () => {
           c0-1.534,1.244-2.778,2.778-2.778h13.889c1.534,0,2.778,1.244,2.778,2.778V93.75z"
               />
 
-              <circle className="lamp-light" cx="119.676" cy="44.22" r="40.51" />
+              <circle className="lamp-light" cx="119.676" cy="44.22" r="40.51"/>
               <path
                 className="lamp-details"
                 d="M149.306,71.528c0,3.242-13.37,13.889-29.861,13.889S89.583,75.232,89.583,71.528c0-4.166,13.369-13.889,29.861-13.889
           S149.306,67.362,149.306,71.528z"
               />
-              <radialGradient className="light-gradient" id="SVGID_1_" cx="119.676" cy="44.22" r="65" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" style={{ stopColor: '#FFFFFF', stopOpacity: 1 }} />
+              <radialGradient className="light-gradient" id="SVGID_1_" cx="119.676" cy="44.22" r="65"
+                              gradientUnits="userSpaceOnUse">
+                <stop offset="0%" style={{ stopColor: '#FFFFFF', stopOpacity: 1 }}/>
                 <stop offset="50%" style={{ stopColor: '#EDEDED', stopOpacity: 0.5 }}>
-                  <animate attributeName="stop-opacity" values="0.0; 0.5; 0.0" dur="5000ms" repeatCount="indefinite"></animate>
+                  <animate attributeName="stop-opacity" values="0.0; 0.5; 0.0" dur="5000ms"
+                           repeatCount="indefinite"/>
                 </stop>
-                <stop offset="100%" style={{ stopColor: '#EDEDED', stopOpacity: 0 }} />
+                <stop offset="100%" style={{ stopColor: '#EDEDED', stopOpacity: 0 }}/>
               </radialGradient>
-              <circle className="lamp-light__glow" fill="url(#SVGID_1_)" cx="119.676" cy="44.22" r="65" />
+              <circle className="lamp-light__glow" fill="url(#SVGID_1_)" cx="119.676" cy="44.22" r="65"/>
               <path
                 className="lamp-bottom"
                 d="M135.417,487.781c0,1.378-1.244,2.496-2.778,2.496H106.25c-1.534,0-2.778-1.118-2.778-2.496v-74.869
