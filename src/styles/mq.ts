@@ -8,6 +8,6 @@ const mq = {
   small: `@media (min-width: ${ScreenSize.SM / 16}em)`,
   medium: `@media (min-width: ${ScreenSize.MD / 16}em)`,
   large: `@media (min-width: ${ScreenSize.LG / 16}em)`,
-}
+};
 
-export default mq
+export default mq;

@@ -91,11 +91,13 @@ const SignIn: React.FC = () => {
 
   return (
     <FormCard onKeyDown={handleKeyDown}>
-      <img src={logoImg} width={100} height={100} alt="logo" />
+      <img src={logoImg} width={100} height={100} alt="logo"/>
       <Title>WELCOME</Title>
       <SubTitle>Sign in by entering the information below</SubTitle>
-      <FormInput name="account" type="text" placeholder="Enter the Email or UserName" value={state.account} onChange={handleChange} />
-      <FormInput name="password" type="password" placeholder="Enter the Password" value={state.password} onChange={handleChange} />
+      <FormInput name="account" type="text" placeholder="Enter the Email or UserName" value={state.account}
+                 onChange={handleChange}/>
+      <FormInput name="password" type="password" placeholder="Enter the Password" value={state.password}
+                 onChange={handleChange}/>
       <StyledLink to="/forgot-password">
         <LinkText>Forgot Password?</LinkText>
       </StyledLink>

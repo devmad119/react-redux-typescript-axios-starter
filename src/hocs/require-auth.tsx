@@ -6,17 +6,17 @@ import authApi from 'common/api/auth';
 
 const requireAuth =
   <Props extends {}>(BaseComponent: ComponentType<Props>) =>
-  (props: Props) => {
-    const isAuthenticated = useAppSelector(selectIsAuthenticated);
-    const history = useHistory();
+    (props: Props) => {
+      const isAuthenticated = useAppSelector(selectIsAuthenticated);
+      const history = useHistory();
 
-    if (!isAuthenticated) {
-      authApi.logout();
-      history.push('/signin');
-      return null;
-    }
+      if (!isAuthenticated) {
+        authApi.logout();
+        history.push('/signin');
+        return null;
+      }
 
-    return <BaseComponent {...props} />;
-  };
+      return <BaseComponent {...props} />;
+    };
 
 export default requireAuth;
