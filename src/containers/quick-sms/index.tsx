@@ -74,7 +74,7 @@ const QuickSMS: React.FC = () => {
               <option>Metro pcs</option>
             </StyledSelect>
             <HighlightButton loading={false} onClick={handleSubmit}>
-              <FiSend />
+              <FiSend/>
               <label>{buttonLabels[sendState % 2]}</label>
             </HighlightButton>
           </OptionalSection>

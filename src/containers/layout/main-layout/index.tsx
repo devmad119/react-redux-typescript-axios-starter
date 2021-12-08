@@ -11,6 +11,7 @@ interface Props {
   children: any;
 }
 
+
 const MainLayout: React.FC<Props> = props => {
   const { children } = props;
 
@@ -18,6 +19,7 @@ const MainLayout: React.FC<Props> = props => {
     <StyledMainLayout>
       <Sidebar />
       <MainSection>
+
         <Header />
         <ContentSection>
           <PerfectScrollbar draggable>
