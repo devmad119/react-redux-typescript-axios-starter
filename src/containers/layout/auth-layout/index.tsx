@@ -12,9 +12,9 @@ const AuthLayout: React.FC<Props> = props => {
 
   return (
     <>
-      <Header />
+      <Header/>
       <AuthSection>{children}</AuthSection>
-      <Footer />
+      <Footer/>
     </>
   );
 };

@@ -8,7 +8,7 @@ const Header: React.FC = () => {
     <StyledHeader>
       <Link to="/">
         <Logo>
-          <img src={logoImg} width={40} height={40} alt="logo" />
+          <img src={logoImg} width={40} height={40} alt="logo"/>
           <LogoTitle>Supremacy</LogoTitle>
         </Logo>
       </Link>

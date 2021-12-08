@@ -1,6 +1,7 @@
 import axios, { AxiosInstance, AxiosPromise, AxiosResponse } from 'axios';
 import authApi from 'common/api/auth';
 import isEmpty from 'validation/is-empty';
+import {config} from 'config';
 
 class HttpApiService {
   private _axiosInstance: AxiosInstance | undefined;
@@ -20,7 +21,7 @@ class HttpApiService {
     } else {
       headers = {
         Accept: 'application/json',
-        Authorization: 'Supremacy ' + authApi.getToken(),
+        Authorization: config.tokenSuffix + authApi.getToken(),
       };
     }
     const options = {
