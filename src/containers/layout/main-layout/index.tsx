@@ -19,7 +19,6 @@ const MainLayout: React.FC<Props> = props => {
     <StyledMainLayout>
       <Sidebar />
       <MainSection>
-
         <Header />
         <ContentSection>
           <PerfectScrollbar draggable>
