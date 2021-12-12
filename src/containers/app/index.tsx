@@ -9,7 +9,6 @@ import useAppSelector from 'hooks/use-app-seletecor';
 import authApi from 'common/api/auth';
 import { setCurrentUser } from 'features/auth-slice';
 import useAppDispatch from 'hooks/use-app-dispatch';
-import isEmpty from 'validation/is-empty';
 
 const Error404 = React.lazy(() => import('containers/404'));
 
@@ -17,40 +16,35 @@ const App: React.FC = () => {
   const isAuthenticated = useAppSelector(selectIsAuthenticated);
   const dispatch = useAppDispatch();
 
-  const signOut = () => {
-    dispatch(setCurrentUser({}));
-    authApi.logout();
-  };
-
   useEffect(() => {
-    const token: string = authApi.getToken() as string;
-    if (!isEmpty(token)) {
-      if (!authApi.isTokenValid(token)) signOut();
-    } else signOut();
+    if(!authApi.isAuthenticated()) {
+      dispatch(setCurrentUser({}));
+      authApi.logout();
+    }
   }, []);
 
   return (
     <>
-      <Suspense fallback={<Loading/>}>
-        <GlobalStyles/>
+      <Suspense fallback={<Loading />}>
+        <GlobalStyles />
         <Router>
           <Switch>
             <Route exact path="/">
-              {isAuthenticated ? <Redirect to="/quick-sms"/> : <Redirect to="/signin"/>}
+              {isAuthenticated ? <Redirect to="/quick-sms" /> : <Redirect to="/signin" />}
             </Route>
             {routes.map((route: RouteType, index: number) => {
               return (
                 <Route path={route.path} exact={route.exact} key={index}>
                   <route.layout>
-                    <route.component/>
+                    <route.component />
                   </route.layout>
                 </Route>
               );
             })}
-            <Route path="*" component={Error404}/>
+            <Route path="*" component={Error404} />
           </Switch>
         </Router>
-        <Toastr/>
+        <Toastr />
       </Suspense>
     </>
   );
