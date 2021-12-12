@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link,useHistory } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import FormCard from 'components/form-card';
 import FormInput from 'components/form-input';
@@ -27,6 +27,7 @@ const initialState: State = {
 
 const SignUp: React.FC = () => {
   const authApiService = new AuthApiService();
+  const history = useHistory();
 
   const [loading, setLoading] = useState<boolean>(false);
   const [state, setState] = useState<State>(initialState);
@@ -71,16 +72,21 @@ const SignUp: React.FC = () => {
       setLoading(true);
       const res = await authApiService.signUp(userData);
       setLoading(false);
-      if (res.data) toast.success(res.data.message);
+      if (res.data) {
+        toast.success(res.data.message);
+        history.push('/signin');
+      } else {
+        toast.error('Something went wrong.');
+      }
     } catch (error) {
       setLoading(false);
       toast.error(error as string);
     }
   };
 
-  const handleKeyDown = (event: any) => {
+  const handleKeyDown = async (event: any) => {
     if (event.key === 'Enter') {
-      handleSubmit();
+      await handleSubmit();
     }
   };
 

@@ -42,8 +42,8 @@ const Sidebar: React.FC = () => {
     try {
       const res = await authApiService.signOut();
       if (res.data) {
-        authApi.logout();
-        dispatch(setCurrentUser({}));
+        await authApi.logout();
+        await dispatch(setCurrentUser({}));
         toast.success(res.data.message);
         history.push('/signin');
       }

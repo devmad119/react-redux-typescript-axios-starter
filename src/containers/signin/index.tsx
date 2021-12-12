@@ -8,11 +8,9 @@ import { Title, SubTitle, LinkText, StyledLink } from './styled';
 import logoImg from 'assets/icons/logo.png';
 import isEmpty from 'validation/is-empty';
 import AuthApiService from 'common/services/auth-api-service';
-import { CheckAccount } from 'common/types/auth-types';
-import { TokenResponse } from 'common/types/auth-types';
+import { CheckAccount, TokenResponse, CurrentUser } from 'common/types/auth-types';
 import { setCurrentUser } from 'features/auth-slice';
 import useAppDispatch from 'hooks/use-app-dispatch';
-import { CurrentUser } from 'common/types/auth-types';
 import authApi from 'common/api/auth';
 
 interface State {
@@ -27,11 +25,11 @@ const initialState: State = {
 
 const SignIn: React.FC = () => {
   const authApiService = new AuthApiService();
+  const dispatch = useAppDispatch();
+  const history = useHistory();
 
   const [loading, setLoading] = useState<boolean>(false);
   const [state, setState] = useState<State>(initialState);
-  const dispatch = useAppDispatch();
-  const history = useHistory();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setState({ ...state, [event.target.name]: event.target.value });
@@ -72,8 +70,8 @@ const SignIn: React.FC = () => {
         };
         await dispatch(setCurrentUser(currentUser));
         await authApi.login(tokenResponse);
-        history.push('/');
         toast.success(res.data.message);
+        history.push('/');
       } else {
         toast.error('Something went wrong.');
       }
@@ -83,9 +81,9 @@ const SignIn: React.FC = () => {
     }
   };
 
-  const handleKeyDown = (event: any) => {
+  const handleKeyDown = async (event: any) => {
     if (event.key === 'Enter') {
-      handleSubmit();
+      await handleSubmit();
     }
   };
 
