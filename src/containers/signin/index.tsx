@@ -68,8 +68,8 @@ const SignIn: React.FC = () => {
           email: res.data.data.email,
           userName: res.data.data.userName,
         };
-        await dispatch(setCurrentUser(currentUser));
-        await authApi.login(tokenResponse);
+        dispatch(setCurrentUser(currentUser));
+        authApi.login(tokenResponse);
         toast.success(res.data.message);
         history.push('/');
       } else {
