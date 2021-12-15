@@ -5,7 +5,7 @@ import {config} from 'config';
 
 class HttpApiService {
   private _axiosInstance: AxiosInstance | undefined;
-  private _baseURL: string;
+  private readonly _baseURL: string;
 
   constructor(baseURL: string) {
     this._baseURL = baseURL;
@@ -24,12 +24,12 @@ class HttpApiService {
         Authorization: config.tokenSuffix + authApi.getToken(),
       };
     }
-    const options = {
+
+    return {
       baseURL: this._baseURL,
       withCredentials: true, // Window Authentification
       headers,
     };
-    return options;
   };
 
   /**
@@ -138,7 +138,7 @@ class HttpApiService {
       console.log(`Network error: ${err}`);
       errorStatement = err.message;
     } else {
-      if (err.response !== undefined) {
+      if (err.response) {
         const { status } = err.response;
         console.log(`HttpService::Error(${status}) : ${err.response.data.message}`);
         errorStatement = err.response.data.message;
