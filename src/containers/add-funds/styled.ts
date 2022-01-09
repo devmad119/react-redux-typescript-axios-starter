@@ -27,8 +27,8 @@ export const HighlightCard = styled.div<Props>`
   display: flex;
   flex-direction: column;
   background: ${({ colors }) => {
-  return `linear-gradient(65.4deg, ${colors[0]} 18.74%, ${colors[1]} 88.33%);`;
-}};
+    return `linear-gradient(65.4deg, ${colors[0]} 18.74%, ${colors[1]} 88.33%);`;
+  }};
   width: 23vw;
   padding: 15px 15px 15px 20px;
   transition: all 0.2s;
