@@ -9,15 +9,15 @@ class AuthApiService extends HttpApiService {
     super(`${API_BASE}`);
   }
 
-  signUp = (userData: CreateUser) => {
+  public signUp = (userData: CreateUser) => {
     return this.create('/signup', userData);
   };
 
-  signIn = (accountData: CheckAccount) => {
+  public signIn = (accountData: CheckAccount) => {
     return this.post('/signin', accountData);
   };
 
-  signOut = () => {
+  public signOut = () => {
     return this.get('/signout');
   };
 }
