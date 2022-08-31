@@ -9,6 +9,7 @@ class AuthApiService extends HttpApiService {
     super(`${API_BASE}`);
   }
 
+<<<<<<< HEAD
   public signUp = (userData: CreateUser) => {
     return this.create('/signup', userData);
   };
@@ -18,6 +19,17 @@ class AuthApiService extends HttpApiService {
   };
 
   public signOut = () => {
+=======
+  signUp = (userData: CreateUser) => {
+    return this.create('/signup', userData);
+  };
+
+  signIn = (accountData: CheckAccount) => {
+    return this.post('/signin', accountData);
+  };
+
+  signOut = () => {
+>>>>>>> 5e15841be91b42d6463e692a2fe206784607cad4
     return this.get('/signout');
   };
 }
