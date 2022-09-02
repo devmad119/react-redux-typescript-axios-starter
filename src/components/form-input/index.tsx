@@ -3,7 +3,7 @@ import { StyledInput } from './styled';
 
 interface Props {
   name?: string;
-  type?: 'text' | 'password' | 'email';
+  type?: 'text' | 'password' | 'email' | 'date' | 'checkbox' | 'radio';
   value?: string;
   placeholder?: string;
   onChange: Function;
