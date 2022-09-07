@@ -1,7 +1,7 @@
 import axios, { AxiosInstance, AxiosPromise, AxiosResponse } from 'axios';
 import authApi from 'common/api/auth';
 import isEmpty from 'validation/is-empty';
-import {config} from 'config';
+import { config } from 'config';
 
 class HttpApiService {
   private _axiosInstance: AxiosInstance | undefined;
@@ -33,7 +33,7 @@ class HttpApiService {
   };
 
   /**
-   * Create instance
+   * Create axios instance
    */
   private createAxiosInstance() {
     this._axiosInstance = axios.create(this.defaultOptions());
