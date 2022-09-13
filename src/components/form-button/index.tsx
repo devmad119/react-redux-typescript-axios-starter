@@ -20,4 +20,4 @@ const FormButton: React.FC<Props> = props => {
   );
 };
 
-export default FormButton;
+export default React.memo(FormButton);
